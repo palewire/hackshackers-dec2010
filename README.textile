@@ -8,7 +8,7 @@
 
 This is a Django project prepared for the "Data Visualization: An Open Brainstorm":http://meetupla.hackshackers.com/calendar/15624221/?eventId=15624221&action=detail a Hacks/Hackers event in Pasadena, CA on Dec. 16, 2010.
 
-The objective is to demonstrate how "latimes-pluggablemaps-uscounties":https://github.com/datadesk/latimes-pluggablemaps-uscounties "Django's geospatial extensions":http://geodjango.org/ can be used to report the news.
+The objective is to demonstrate how "latimes-pluggablemaps-uscounties":https://github.com/datadesk/latimes-pluggablemaps-uscounties and "Django's geospatial extensions":http://geodjango.org/ can be used to report the news.
 
 !http://farm3.static.flickr.com/2768/4373159365_acc760501c_o.png(Maps)!
 
