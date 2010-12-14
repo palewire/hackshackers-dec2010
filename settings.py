@@ -77,4 +77,5 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.gis',
     'django.contrib.admin',
+    'us_counties',
 )
