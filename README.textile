@@ -12,8 +12,7 @@ This is a Django project prepared for the "Data Visualization: An Open Brainstor
 
 The objective is to demonstrate how "latimes-pluggablemaps-uscounties":https://github.com/datadesk/latimes-pluggablemaps-uscounties and "Django's geospatial extensions":http://geodjango.org/ can be used to report the news.
 
-The code here creates interactive maps of unemployment data that are the rough equal of the thematic and proporational symbol maps newspapers have created for years. The data are entirely from the public domain, and the maps are made by employing the OpenLayers library.
-The geospatial data are drawn the L.A. Times' first "pluggable map" prototype, "latimes-pluggablemaps-uscounties":https://github.com/datadesk/latimes-pluggablemaps-uscounties.
+The code here creates interactive maps of unemployment data that are the rough equal of the thematic and proporational symbol maps newspapers have created for years. The data are entirely from the public domain, and the maps are made by employing the OpenLayers library. The geospatial data are drawn the L.A. Times' first "pluggable map" prototype, "latimes-pluggablemaps-uscounties":https://github.com/datadesk/latimes-pluggablemaps-uscounties.
 
 h3. *Prerequisites you need to install yourself*
 
