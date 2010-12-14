@@ -121,13 +121,13 @@ function load_map() {
     function select_feature(feature) {
         selectedFeature = feature;
         popup = new OpenLayers.Popup.AnchoredBubble("chicken", 
-                                new OpenLayers.LonLat(-12590000, 5150000),
-                                new OpenLayers.Size(210,90), // Size of the bubble
-                                "<div class='bubblewrap'><p class='county-hed'>" + feature.data.name + "</p><p style='margin-bottom:0px;'>Rate:&nbsp;" + feature.data.unemployment_rate + "%</p><p style='margin:0;'>" + "Total:&nbsp;" + feature.data.clean_unemployment + "</p>" ,
-                                null, 
-                                false, // closebox?
-                                onPopupClose // on close function
-                                );
+            new OpenLayers.LonLat(-12590000, 5150000),
+            new OpenLayers.Size(210,90), // Size of the bubble
+            "<div class='bubblewrap'><p class='county-hed'>" + feature.data.name + "</p><p style='margin-bottom:0px;'>Rate:&nbsp;" + feature.data.unemployment_rate + "%</p><p style='margin:0;'>" + "Total:&nbsp;" + feature.data.clean_unemployment + "</p>" ,
+            null, 
+            false, // closebox?
+            onPopupClose // on close function
+        );
         feature.popup = popup;
         map.addPopup(popup);
     }
@@ -138,16 +138,16 @@ function load_map() {
     }
 
     key_popup = new OpenLayers.Popup.AnchoredBubble("chicken", 
-                                new OpenLayers.LonLat(-14006000, 3900000),
-                                new OpenLayers.Size(200, 80), // Size of the bubble
-                                "<div class='bubblewrap'>" + 
-                                "<p class='county-hed'>Proporational Map</strong>" +
-                                "<p class='month-browse' style='margin:0;'><a href='{% url unemployment-month-detail month.year month.month %}'>Switch to thematic map &raquo;</a></p>" +
-                                "</div>",
-                                null, 
-                                false, 
-                                onPopupClose
-                                );
+        new OpenLayers.LonLat(-14006000, 3900000),
+        new OpenLayers.Size(200, 80), // Size of the bubble
+        "<div class='bubblewrap'>" + 
+        "<p class='county-hed'>Proporational Map</strong>" +
+        "<p class='month-browse' style='margin:0;'><a href='{% url unemployment-month-detail month.year month.month %}'>Switch to thematic map &raquo;</a></p>" +
+        "</div>",
+        null, 
+        false, 
+        onPopupClose
+    );
     map.addPopup(key_popup)
 
 

@@ -51,7 +51,9 @@ def month_detail(request, year, month):
     Reports the data for a particular month.
     """
     try:
-        object_list = CountyByMonth.unadjusted.filter(year=year, month=month)
+        object_list = CountyByMonth.unadjusted.filter(
+            year=year, month=month
+        ).select_related("county")
     except:
         raise Http404
     if not object_list:

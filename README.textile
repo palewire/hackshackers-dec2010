@@ -1,0 +1,18 @@
+h1. The GeoDjango Dunktank
+
+This is a Django project prepared for the "Data Visualization: An Open Brainstorm":http://meetupla.hackshackers.com/calendar/15624221/?eventId=15624221&action=detail a Hacks/Hackers event in Pasadena, CA on Dec. 16, 2010.
+
+The objective is to demonstrate how "latimes-pluggablemaps-uscounties":https://github.com/datadesk/latimes-pluggablemaps-uscounties "Django's geospatial extensions":http://geodjango.org/ can be used to report the news.
+
+!http://farm3.static.flickr.com/2768/4373159365_acc760501c_o.png(Maps)!
+
+The code here creates interactive maps of unemployment data that are the rough equal of the thematic and proporational symbol maps newspapers have created for years. The data are entirely from the public domain, and the maps are made by employing the OpenLayers library.
+The geospatial data are drawn the L.A. Times' first "pluggable map" prototype, "latimes-pluggablemaps-uscounties":https://github.com/datadesk/latimes-pluggablemaps-uscounties.
+
+h3. *Prerequisites you need to install yourself*
+
+* "PostgreSQL":http://www.postgresql.org/ and its development headers
+* "GeoDjango":http://geodjango.org/docs/install.html (This is the tricky one)
+
+
+
