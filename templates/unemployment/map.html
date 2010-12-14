@@ -1,0 +1,86 @@
+{% extends "unemployment/base.html" %}
+{% load humanize %}
+
+{% block extrajs %}
+    <script type="text/javascript">
+        {% ifequal map_type 'p' %}
+        {% include "unemployment/proportional_map.js" %}
+        {% else %}
+        {% include "unemployment/thematic_map.js" %}
+        {% endifequal %}
+    </script>
+{% endblock %}
+
+{% block extrabody %}onload="load_map();"{% endblock %}
+
+{% block content %}
+
+<div class="page-hed-wrap">
+    <h1 class="page-hed">California Unemployment</h1>
+</div>
+    
+<table>
+    <tr>
+        <td width=100 align=left class="month-browse">
+            {% if next_month %}
+            <a href="{% url unemployment-month-detail next_month.year next_month.month %}?map={{ request.GET.map }}">
+                &laquo; {{ next_month|date:"N Y" }}
+            </a>
+            {% endif %}
+        </td>
+        <td width=400 align=center><p class="month-hed">{{ month|date:"F Y" }}</p></td>
+        <td width=100 align=right class="month-browse">
+            {% if previous_month %}
+            <a href="{% url unemployment-month-detail previous_month.year previous_month.month %}?map={{ request.GET.map }}">
+                {{ previous_month|date:"N Y" }} &raquo;
+            </a>
+            {% endif %}
+        </td>
+    </tr>
+</table>
+
+<div id="bigmap" style="clear:both; height:600px; width:600; border:3px solid black; margin:0 0 20px 0;"></div>
+
+
+<table width=600 style="margin-top:10px; margin-left:15px;">
+<tr>
+    <td>
+    
+        <h3>Highest rate</h3>
+        <table border=1 cellpadding=8 cellspacing=4 width=250>
+            <tr>
+                <th align=left>County</th>
+                <th align=right>Rate</th>
+            </tr>
+            {% for object in object_list|dictsortreversed:"unemployment_rate"|slice:"5" %}
+            <tr>
+                <td>{{ object.county.short_name }}</td>
+                <td align=right>{{ object.unemployment_rate }}%</td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+    </td>
+    
+    <td>
+
+        <h3>Most unemployed</h3>
+        <table border=1 cellpadding=8 cellspacing=4 width=250>
+            <tr>
+                <th align=left>County</th>
+                <th align=right>Total</th>
+            </tr>
+            {% for object in object_list|dictsortreversed:"unemployment"|slice:"5" %}
+            <tr>
+                <td>{{ object.county.short_name }}</td>
+                <td align=right>{{ object.unemployment|intcomma }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+    </td>
+
+</tr>
+</table>
+
+{% endblock %}

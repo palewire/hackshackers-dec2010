@@ -77,6 +77,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.gis',
     'django.contrib.admin',
+    'django.contrib.humanize',
     'us_counties',
     'unemployment',
 )
